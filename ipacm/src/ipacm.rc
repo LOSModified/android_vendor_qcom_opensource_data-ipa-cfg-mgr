@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -35,3 +35,8 @@ on post-fs-data
     mkdir /data/vendor/ipa 0770 radio radio
     chmod 0770 /data/vendor/ipa
     start vendor.ipacm
+
+on post-fs-data
+    #create prebuilt filter cfg xml file
+    copy /vendor/etc/IPACM_Filter_cfg.xml /data/vendor/ipa/IPACM_Filter_cfg.xml
+    chown radio radio /data/vendor/ipa/IPACM_Filter_cfg.xml
