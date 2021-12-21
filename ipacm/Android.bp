@@ -1,13 +1,12 @@
-
 cc_binary {
     name: "ipacm",
 
     local_include_dirs: ["src"] + ["inc"],
-	header_libs: ["device_kernel_headers"]+["qti_kernel_headers"],
+    header_libs: ["device_kernel_headers"]+["qti_kernel_headers"],
 
     cflags: ["-DFEATURE_IPA_ANDROID"] + ["-DFEATURE_IPACM_RESTART"] + [
         "-DFEATURE_IPACM_HAL",
-	"-DDEBUG",
+        "-DDEBUG",
         "-Wall",
         "-Werror",
         "-Wno-error=macro-redefined",
@@ -42,11 +41,11 @@ cc_binary {
     vendor: true,
 
     shared_libs: [
-	"liboffloadhal",
-	"libipanat",
-	"libxml2",
-	"libnfnetlink",
-	"libnetfilter_conntrack",
+        "liboffloadhal",
+        "libipanat",
+        "libxml2",
+        "libnfnetlink",
+        "libnetfilter_conntrack",
         "libhidlbase",
         "liblog",
         "libcutils",
